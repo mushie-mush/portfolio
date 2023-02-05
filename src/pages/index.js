@@ -4,8 +4,6 @@ import Contact from '@/components/Contact'
 import Hero from '@/components/Hero'
 import Works from '@/components/Works'
 
-import Head from 'next/head'
-
 export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,

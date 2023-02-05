@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout'
-import '@/styles/main.scss'
+import Head from 'next/head'
 import { Raleway } from '@next/font/google'
+import '@/styles/main.scss'
 
 const raleway = Raleway({ subsets: ['latin'] })
 
