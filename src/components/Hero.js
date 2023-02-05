@@ -77,7 +77,6 @@ export default function Hero() {
             ctx.fillRect(0, 0, W, H);
         }
         init();
-        window.onresize = init;
 
         function Point() {
             this.ang = 2 * PI * random();
