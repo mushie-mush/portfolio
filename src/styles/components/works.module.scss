@@ -1,0 +1,99 @@
+@import "../variables";
+
+.works {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+  grid-row-gap: 8rem;
+  justify-items: start;
+  align-items: start;
+
+  &__title {
+    grid-column: 1/4;
+  }
+
+  &__container {
+    width: 100%;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 8rem;
+    column-gap: 8rem;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: start;
+
+    &:nth-child(even) {
+      margin-top: 30rem;
+
+      @media only screen and (max-width: $breakpoint-xl) {
+        margin-top: 0;
+      }
+    }
+
+    & figure {
+      position: relative;
+      height: 65rem;
+      width: 100%;
+      background-color: $color-gray-light;
+      overflow: hidden;
+
+      @media only screen and (max-width: $breakpoint-md) {
+        height: 50rem;
+      }
+
+      & img {
+        position: absolute;
+        top: 50%;
+        height: 120%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+      }
+    }
+
+    &-actions {
+      display: flex;
+
+      & a {
+        margin-right: 2rem;
+      }
+    }
+
+    &-body {
+      width: 100%;
+      margin-top: 4rem;
+    }
+
+    & h3 {
+      margin-bottom: 1rem;
+    }
+
+    & hr {
+      margin: 2rem 0;
+      border: none;
+      border-top: 1px solid rgba($color: #fff, $alpha: 0.3);
+    }
+
+    & span {
+      font-size: 1.6rem;
+      color: #afafaf;
+    }
+  }
+
+  &__button {
+    justify-self: right;
+  }
+}
