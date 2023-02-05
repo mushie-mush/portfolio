@@ -2,9 +2,65 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import React, { useEffect, useRef } from "react"
 import * as styles from "../styles/components/Hero.module.scss"
 
+let W, H, L, n = 15, c = 0, dc = 0.25;
+const { sin, cos, PI, random, round } = Math;
+
+const sectionAnimate = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: .8
+        },
+    },
+}
+
+const titleVariants = {
+    animate: {
+        transition: {
+            staggerChildren: .6,
+        },
+    },
+}
+
+const titleAnimation = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 1,
+        },
+    },
+}
+
+const backgroundVariants = {
+    animate: {
+        transition: {
+            staggerChildren: 0.5,
+        },
+    },
+}
+
+const bubbleAnimation = {
+    initial: {
+        opacity: 0,
+        scale: 1.2,
+    },
+    animate: {
+        opacity: 0.3,
+        scale: 1.0,
+        transition: {
+            duration: 3,
+
+        },
+    },
+}
+
 export default function Hero() {
-    let W, H, L, n = 15, c = 0, dc = 0.25;
-    const { sin, cos, PI, random, round } = Math;
 
     const canvasBg = useRef();
 
@@ -66,61 +122,6 @@ export default function Hero() {
         }
         backgroundAnimate();
     }, []);
-
-    const sectionAnimate = {
-        initial: {
-            opacity: 0,
-        },
-        animate: {
-            opacity: 1,
-            transition: {
-                duration: .8
-            },
-        },
-    }
-
-    const titleVariants = {
-        animate: {
-            transition: {
-                staggerChildren: .6,
-            },
-        },
-    }
-
-    const titleAnimation = {
-        initial: {
-            opacity: 0,
-        },
-        animate: {
-            opacity: 1,
-            transition: {
-                duration: 1,
-            },
-        },
-    }
-
-    const backgroundVariants = {
-        animate: {
-            transition: {
-                staggerChildren: 0.5,
-            },
-        },
-    }
-
-    const bubbleAnimation = {
-        initial: {
-            opacity: 0,
-            scale: 1.2,
-        },
-        animate: {
-            opacity: 0.3,
-            scale: 1.0,
-            transition: {
-                duration: 3,
-
-            },
-        },
-    }
 
     const { scrollYProgress } = useScroll()
 
