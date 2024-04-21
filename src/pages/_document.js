@@ -5,8 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-9MYVVH6KZW"></Script>
-        <Script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-9MYVVH6KZW" strategy="afterInteractive"></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date());
