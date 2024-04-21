@@ -46,13 +46,15 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-9MYVVH6KZW" strategy="afterInteractive"></Script>
-        <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
+          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-9MYVVH6KZW');
-        </Script>
+        `}
+      </Script>
       <style jsx global>{`
         html {
           font-family: ${raleway.style.fontFamily};
