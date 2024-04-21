@@ -2,6 +2,7 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import { Raleway } from '@next/font/google'
 import '@/styles/main.scss'
+import Script from 'next/script'
 
 const raleway = Raleway({ subsets: ['latin'] })
 
@@ -44,6 +45,14 @@ export default function App({ Component, pageProps }) {
           content="https://madebycello.netlify.app/og.png"
         />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-9MYVVH6KZW" strategy="afterInteractive"></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+
+          gtag('config', 'G-9MYVVH6KZW');
+        </Script>
       <style jsx global>{`
         html {
           font-family: ${raleway.style.fontFamily};
